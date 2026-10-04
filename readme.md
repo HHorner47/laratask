@@ -29,16 +29,18 @@
 
 ## 3.5. メール通知
 1. .envファイルのmailに関する部分を以下のように書き換える
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USERNAME=あなたのgmailアドレス
-MAIL_PASSWORD=アプリパスワード（作成する必要あり）
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS="あなたのgmailアドレス"
-MAIL_FROM_NAME="${APP_NAME}"
+- MAIL_MAILER=smtp
+- MAIL_HOST=smtp.gmail.com
+- MAIL_PORT=587
+- MAIL_USERNAME=あなたのgmailアドレス
+- MAIL_PASSWORD=アプリパスワード（作成する必要あり）
+- MAIL_ENCRYPTION=tls
+- MAIL_FROM_ADDRESS="あなたのgmailアドレス"
+- MAIL_FROM_NAME="${APP_NAME}"
 2. ターミナルで以下のコマンドを動かす
+```bash
 ./vendor/bin/sail php artisan schedule:work
+```
 3. ユーザー登録しているメールに未完了かつ、期限が近いタスクがあると通知が送信される
 
 テスト用アカウント：
